@@ -57,7 +57,7 @@ public class JpaMain {
             for (Member member : result) {
                 System.out.println("member.getName = " + member.getName());
             }*/
-
+            tx.commit();
         } catch (Exception e) {
             tx.rollback();
         } finally {
