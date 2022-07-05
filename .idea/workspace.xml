@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13f1ad60-1870-4bce-98fd-4d690497076d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/jpa/JpaMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/jpa/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DDL.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+    <list default="true" id="13f1ad60-1870-4bce-98fd-4d690497076d" name="Changes" comment="feat : 컬럼 매핑 어노테이션 관련 기능 추가 &#10;&#10;추가된 요구사항 &#10;1. 회원은 일반 회원과 관리자로 구분해야 한다.&#10;2. 회원 가입일과 수정일이 있어야 한다.&#10;3. 회원을 설명할 수 있는 필드가 있어야 한다. 이 필드는 길이 제한이 없다.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/jpa/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/jpa/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +18,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -39,16 +37,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="hello.jpa" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="JpaMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="hello.jpa.JpaMain" />
@@ -78,6 +82,21 @@
       <option name="presentableId" value="Default" />
       <updated>1656722796910</updated>
     </task>
+    <task id="LOCAL-00001" summary="chore : 로컬환경별 설정 추가">
+      <created>1656892234514</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656892234514</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat : 컬럼 매핑 어노테이션 관련 기능 추가 &#10;&#10;추가된 요구사항 &#10;1. 회원은 일반 회원과 관리자로 구분해야 한다.&#10;2. 회원 가입일과 수정일이 있어야 한다.&#10;3. 회원을 설명할 수 있는 필드가 있어야 한다. 이 필드는 길이 제한이 없다.">
+      <created>1656906862665</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1656906862665</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,5 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore : 로컬환경별 설정 추가" />
+    <MESSAGE value="feat : 컬럼 매핑 어노테이션 관련 기능 추가 &#10;&#10;추가된 요구사항 &#10;1. 회원은 일반 회원과 관리자로 구분해야 한다.&#10;2. 회원 가입일과 수정일이 있어야 한다.&#10;3. 회원을 설명할 수 있는 필드가 있어야 한다. 이 필드는 길이 제한이 없다." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 컬럼 매핑 어노테이션 관련 기능 추가 &#10;&#10;추가된 요구사항 &#10;1. 회원은 일반 회원과 관리자로 구분해야 한다.&#10;2. 회원 가입일과 수정일이 있어야 한다.&#10;3. 회원을 설명할 수 있는 필드가 있어야 한다. 이 필드는 길이 제한이 없다." />
   </component>
 </project>
