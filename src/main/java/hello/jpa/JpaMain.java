@@ -16,47 +16,28 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
+            //저장
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
-            //membmer insert
-
-/*
             Member member = new Member();
-            member.setId(2L);
-            member.setName("Hello B");
+            member.setName("member1");
+            member.setTeam(team);
             em.persist(member);
-            tx.commit();
-*/
 
+            //1차 캐시에서 가져오기 때문에 영속성 콘텍스트를 초기야 해야 쿼리를 볼수 있다.
+            em.flush();
+            em.clear();
 
-            //member find
-/*
-            Member findMember = em.find(Member.class, 2L);
-            System.out.println("findMember.id = " + findMember.getId());
-            System.out.println("findMember.name = " + findMember.getName());
-            tx.commit();
- */
+            Member findMember = em.find(Member.class,member.getId());
+            Team findTeam = findMember.getTeam();
+            System.out.println("findTeam = " + findTeam.getName());
 
+            //이런식으로 하면 fk가 업데이트 된다. (100번 ID를 있다 치고)
+//            Team newTeam = em.find(Team.class, 100L);
+//            findMember.setTeam(newTeam);
 
-
-            //memeber remove
-            /*
-            Member findMember = em.find(Member.class, 2L);
-            em.remove(findMember);
-            tx.commit();*/
-
-            //member update
-            /*
-            Member findMember = em.find(Member.class, 1L);
-            findMember.setName("HelloJPA");
-            tx.commit();
-            */
-
-            //select ALL
-            /*
-            List<Member> result = em.createQuery("select m from Member as m", Member.class).setFirstResult(1).setMaxResults(10).getResultList();
-            for (Member member : result) {
-                System.out.println("member.getName = " + member.getName());
-            }*/
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
@@ -64,7 +45,6 @@ public class JpaMain {
             //close
             em.close();
             emf.close();
-
         }
     }
 }
