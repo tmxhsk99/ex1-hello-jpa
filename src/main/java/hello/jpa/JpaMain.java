@@ -33,6 +33,13 @@ public class JpaMain {
             Member findMember = em.find(Member.class,member.getId());
             Team findTeam = findMember.getTeam();
             System.out.println("findTeam = " + findTeam.getName());
+            // 양방향 연결 셋팅 후 start
+            List<Member> members = findMember.getTeam().getMembers();
+
+            for (Member m : members) {
+                System.out.println("m = " + m.getName());
+            }
+            // 양방향 연결 셋팅 후 End
 
             //이런식으로 하면 fk가 업데이트 된다. (100번 ID를 있다 치고)
 //            Team newTeam = em.find(Team.class, 100L);

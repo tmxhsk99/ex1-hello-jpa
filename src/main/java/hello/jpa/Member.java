@@ -16,10 +16,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@SequenceGenerator(
-            name ="MEMBER_SEQ_GENERATOR",
-        sequenceName = "MEMBER_SEQ",//매핑할 데이터 베이스 시퀸스 이름
-        initialValue = 1, allocationSize = 1)
 public class Member {
 
     @Id @GeneratedValue
