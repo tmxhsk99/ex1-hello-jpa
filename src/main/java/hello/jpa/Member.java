@@ -15,12 +15,9 @@ public class Member {
     private Long id;
     @Column(name = "USER_NAME")
     private String name;
-    //객체 지향적이지 않은 설계
-    //@Column(name="TEAM_ID")
-    //private Long teamId;
 
-    @ManyToOne //현재 객체(Member)의 입장에서 생각을 해야한다. 멤버가 여러명에 팀이 1개 이므로 ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @ManyToOne //일 대 다 양방향 , 읽기 전용이 되어버림
+    @JoinColumn(name="TEAM_ID" ,insertable = false,updatable = false)
     private Team team;
 
     public Long getId() {
