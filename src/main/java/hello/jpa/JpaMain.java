@@ -19,22 +19,31 @@ public class JpaMain {
         EntityTransaction tx = em.getTransaction();
         tx.begin();
         try {
-            Member member = new Member();
-            member.setUsername("hello");
-            em.persist(member);
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
+
+            Member member1 = new Member();
+            member1.setUsername("member1");
+            member1.setTeam(team);
+
+            em.persist(member1);
+
+
             em.flush();
             em.clear();
 
-            Member refMember = em.getReference(Member.class, member.getId());
-            System.out.println("refMember = " + refMember.getClass()); //Proxy
-            //refMember.getUsername();
-            //프록시 인스턴스의 초기화 여부 확인
-            //System.out.println("isLoaded = " + emf.getPersistenceUnitUtil().isLoaded(refMember));
-            //강제 초기화
-            Hibernate.initialize(refMember);
+            Member m = em.find(Member.class, member1.getId());
+
+            System.out.println("m.getTeam().getClass() = " + m.getTeam().getClass());
+            System.out.println("===========");
+            m.getTeam().getName();
+            System.out.println("===========");
+
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
+            e.printStackTrace();
         } finally {
             //close
             em.close();
